@@ -9,6 +9,9 @@ body
 {
   background-color: rgb(251, 145, 31);
   height: 150px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 #logo
 {
