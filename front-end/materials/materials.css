@@ -1,0 +1,41 @@
+body 
+{
+  color: darkslategrey;
+  background-color:rgb(235, 239, 203);
+    margin: 0;
+    padding: 0;
+}
+#navbar 
+{
+  background-color: rgb(251, 145, 31);
+  height: 150px;
+}
+#logo
+{
+  width: 170px;
+}
+#nav-links
+{
+  border-style: hidden;
+  color: blanchedalmond;
+}
+#footer
+{
+  background-color: rgb(108, 241, 119);
+}
+
+.section-1
+{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    padding-top: 40px;
+}
+.section-1 div
+{
+  background-color: rgb(251, 145, 31);
+  margin: 10px;
+  height: 400px;
+  width: 400px;
+  font-size: 24px;
+}
