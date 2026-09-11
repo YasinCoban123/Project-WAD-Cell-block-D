@@ -67,3 +67,10 @@ body
     display: flex;
     justify-content: center;
 }
+#nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 7rem;
+  margin: 0px;
+  padding: 10px;
+}
