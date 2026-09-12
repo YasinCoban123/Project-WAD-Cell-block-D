@@ -30,3 +30,23 @@ main {
 .machine-image {
   border: 2px solid darkslategrey;
 }
+
+.session-card {
+  /* background-color: white;
+  border: 4px double #fb911f; */
+  border: 3px solid transparent;
+
+  background:
+    linear-gradient(white, rgb(98, 234, 93)) padding-box,
+    linear-gradient(135deg, #fb911f, #7c3aed) border-box;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+  max-width: 300px;
+  margin-bottom: 16px;
+}
+
+/* 
+.session-card summary {
+  cursor: pointer;
+} */
