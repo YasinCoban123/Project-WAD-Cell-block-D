@@ -1,12 +1,12 @@
-body 
-{
+body {
   color: darkslategrey;
-  background-color:rgb(235, 239, 203);
-    margin: 0;
-    padding: 0;
+  background-color: rgb(235, 239, 203);
+  margin: 0;
+  padding: 0;
 }
-#navbar 
-{
+
+#navbar {
+  padding-left: 30px;
   background-color: rgb(251, 145, 31);
   height: 150px;
   display: flex;
@@ -21,4 +21,12 @@ body
   gap: 7rem;
   margin: 0px;
   padding: 10px;
+}
+
+main {
+  padding: 30px;
+}
+
+.machine-image {
+  border: 2px solid darkslategrey;
 }
