@@ -1,0 +1,24 @@
+body 
+{
+  color: darkslategrey;
+  background-color:rgb(235, 239, 203);
+    margin: 0;
+    padding: 0;
+}
+#navbar 
+{
+  background-color: rgb(251, 145, 31);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+#nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 7rem;
+  margin: 0px;
+  padding: 10px;
+}

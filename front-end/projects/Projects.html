@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="projectStyle.css">
+</head>
+<body>
+    <nav id="navbar">
+        <img id="logo" src="projectsLogo.png" alt="">
+        <div id="nav-links">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../materials/materials.html">Materials</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../workat.html">Work at Blok D</a></li>
+        </ul>
+        </div>
+    </nav>
+    <h1>Projects</h1>
+    <p>On this page you can find inspiring projects of everyone who used Blok D utensils.</p>
+
+    <form action="submit_project.php" method="post">
+        <label for="project_name">Project Name:</label>
+        <input type="text" id="project_name" name="project_name" required><br><br>
+
+        <label for="project_description">Project Description:</label><br>
+        <textarea id="project_description" name="project_description" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="project_tools">Project tools used:</label>
+        <input type="text" id="project_tools" name="project_tools" required><br><br>
+
+        <label for="time_per_tool">Time spent per tool (in hours):</label>
+        <input type="number" id="time_per_tool" name="time_per_tool" step="0.1" required><br><br>
+
+        <input type="submit" value="Submit Project">
+
+    </form>
+
+</body>
+</html>
