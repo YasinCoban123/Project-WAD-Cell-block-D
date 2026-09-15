@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bertha - Blok D</title>
-    <link rel="stylesheet" href="/front-end/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
-    <nav id="navbar">
-        <div id="nav-links">
-            <ul>
+<nav id="upper-nav">
+    <div>
+      <a href="../index.html"><img id="img-logo" src="../machine-time/images/logo.png" alt="Blok D logo" width="67"></a>
+    </div>
+  </nav>
+  <nav id="navbar">
+      <div id="nav-links">
+        <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="../about-me/about.html">About</a></li>
             <li><a href="../projects/Projects.html">Projects</a></li>
@@ -20,11 +25,22 @@
             <li><a href="../work-at/workat.html">Work at Blok D</a></li>
             <li><a href="../Tool-Loans/weeknd.html">Tools to loan</a></li>
             <li><a href="../index.html">Contact</a></li>
-            </ul>
+        </ul>
         </div>
     </nav>
+  </nav>
     <main>
         <h1>Bertha</h1>
+        <p>Type: Laser cutter</p>
+        <h2>Training sessions</h2>
+        <label for="date">Choose a date:</label>
+        <input type="date" id="date" name="session-date">
+        <details class="session-card">
+            <summary>Date: 21 September 2026 at 18:00</summary>
+            <p>Leader: Jurn</p>
+
+        </details>
+
         <nav>
             <a href="machines.html">Back to machines</a>
         </nav>
