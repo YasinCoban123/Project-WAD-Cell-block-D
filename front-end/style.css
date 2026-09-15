@@ -17,10 +17,10 @@ body {
   color: black;
 }
 
-#img-logo
-{
+#img-logo {
   margin-left: 30px;
 }
+
 #navbar {
   background-color: rgb(251, 145, 31);
   height: 60px;
@@ -31,9 +31,12 @@ body {
   display: flex;
   justify-content: center;
 }
-a:hover, a:visited, a:link, a:active
-{
-    text-decoration: none;
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
 }
 
 #navbar img {
@@ -153,6 +156,10 @@ a:hover, a:visited, a:link, a:active
 #h1-materials-1 {
   display: flex;
   justify-content: center;
+}
+
+main {
+  padding-left: 30px;
 }
 
 /* End materials css */
