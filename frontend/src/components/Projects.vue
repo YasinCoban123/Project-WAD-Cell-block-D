@@ -1,15 +1,7 @@
 <script setup>
 </script>
 
-
 <template>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Projects</title>
-        <link rel="stylesheet" href="../style.css">
-    </head>
-    <body>
     <nav id="upper-nav">
         <div>
         <a href="../index.html"><img id="img-logo" src="../machine-time/images/logo.png" alt="Blok D logo" width="67"></a>
@@ -39,14 +31,12 @@
 
         <nav class="sidebar">
             <ul>
-                <li><a href="AddProject.html" class="addprojectbtn">Add Your Project</a></li>
-                <li><a href="RateProjects.html" class="rating">Rate Projects</a></li>
+                <li><router-link to="/add-project" class="addprojectbtn">Add Your Project</router-link></li>
+                <li><router-link to="/rate-projects" class="rating">Rate Projects</router-link></li>
             </ul>
         </nav>
-
-    </body>
-</Template>
+</template>
 
 <style scoped>
-@import "../style.css";
+@import "../../../front-endhtml/style.css";
 </style>

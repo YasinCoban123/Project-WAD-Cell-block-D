@@ -49,5 +49,5 @@
 
 
 <style scoped>
-@import "../style.css";
+@import "../../../front-endhtml/style.css";
 </style>
