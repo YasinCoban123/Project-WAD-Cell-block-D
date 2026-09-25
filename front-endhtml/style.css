@@ -11,6 +11,10 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+main {
+  padding-left: 30px;
+}
+
 #upper-nav {
   background: linear-gradient(to left, rgb(251, 145, 31), #ecf2ec);
   height: 80px;
@@ -123,7 +127,6 @@ a:active {
   justify-content: center;
   flex-wrap: wrap;
   gap: 50px;
-  padding-top: 40px;
 }
 
 .section-1 div {
@@ -131,6 +134,7 @@ a:active {
   margin: 10px;
   height: 400px;
   width: 400px;
+  border: 4px dotted #28006c;
   font-size: 18px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -162,26 +166,44 @@ a:active {
   display: flex;
   justify-content: center;
 }
+.material-tools
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 40px;
+  padding-bottom: 30;
+}
+#img-materials-4
+{
+  height: 220px;
+  width: 220px;
+  border: 8px solid #fb911f;
+  border-radius: 40px;
+}
+.product-section
+{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 40px;
 
-main {
-  padding-left: 30px;
 }
 
-.sidebar {
-    width: 1500px;
-    padding: 20px;
-    display: flex;
-    text-align: right;
-    flex-direction: column;
-    align-items: flex-end;
-    position: absolute;
-    top: 200px;
-    right: 20px;
+.product-section img
+{
+  height: 500px;
+  width: 500px;
+  border: 4px solid #fb911f;
+  border-radius: 15px;
+}
+#second-product-sect
+{
+  padding-right: 100px;
+  padding-left: 100px;
 }
 
-.addprojectbtn {
-    text-decoration: none;
-}
 
 /* End materials css */
 
