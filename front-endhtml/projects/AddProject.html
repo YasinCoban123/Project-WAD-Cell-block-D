@@ -1,55 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Project</title>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
-        <nav id="upper-nav">
+<nav id="upper-nav">
     <div>
-      <a href="../index.html"><img id="img-logo" src="../machine-time/images/logo.png" alt="Blok D logo" width="67"></a>
+      <a href="../index.html"><img id="img-logo" src="../machine-time/images/logo.png" alt="Blok D logo" width="93"></a>
     </div>
   </nav>
   <nav id="navbar">
-      <div id="nav-links">
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../about-me/about.html">About</a></li>
-            <li><a href="../projects/Projects.html">Projects</a></li>
-            <li><a href="../materials/materials.html">Materials</a></li>
-            <li><a href="../machine-time/machines.html">Machines</a></li>
-            <li><a href="../work-at/workat.html">Work at Blok D</a></li>
-            <li><a href="../Tool-Loans/weeknd.html">Tools to loan</a></li>
-            <li><a href="../index.html">Contact</a></li>
-        </ul>
-        </div>
-    </nav>
+    <div id="nav-links">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about-me/about.html">About</a></li>
+        <li><a href="../projects/Projects.html">Projects</a></li>
+        <li><a href="../materials/materials.html">Materials</a></li>
+        <li><a href="../machine-time/machines.html">Machines</a></li>
+        <li><a href="../work-at/workat.html">Work at Blok D</a></li>
+        <li><a href="../Tool-Loans/weeknd.html">Tools to loan</a></li>
+        <li><a href="../index.html">Contact</a></li>
+      </ul>
+    </div>
   </nav>
   </nav>
   </nav>
+  </nav>
+    <h1>Projects</h1>
+    <p>On this page you can find inspiring projects of everyone who used Blok D utensils.</p>
 
-    <div class="upload-section">
+
+  <div class="upload-section">
     <div> Upload your project!</div>
     <form action="submit_project.php" method="post">
-        <label for="project_name">Project Name:</label>
-        <input type="text" id="project_name" name="project_name" required><br><br>
+      <label for="project_name">Project Name:</label>
+      <input type="text" id="project_name" name="project_name" required><br><br>
 
-        <label for="project_description">Project Description:</label><br>
-        <textarea id="project_description" name="project_description" rows="4" cols="50" required></textarea><br><br>
+      <label for="project_description">Project Description:</label><br>
+      <textarea id="project_description" name="project_description" rows="4" cols="50" required></textarea><br><br>
 
-        <label for="project_tools">Project tools used:</label>
-        <input type="text" id="project_tools" name="project_tools" required><br><br>
+      <label for="project_tools">Project tools used:</label>
+      <input type="text" id="project_tools" name="project_tools" required><br><br>
 
-        <label for="web_adress">Web adress van het design </label>
-        <input type="url" id="web_adress" name="web_adress" required><br><br>
+      <label for="web_adress">Web adress van het design </label>
+      <input type="url" id="web_adress" name="web_adress" required><br><br>
 
-        <label for="time_per_tool">Time spent per tool (in hours):</label>
-        <input type="number" id="time_per_tool" name="time_per_tool" step="0.1" required><br><br>
+      <label for="time_per_tool">Time spent per tool (in hours):</label>
+      <input type="number" id="time_per_tool" name="time_per_tool" step="0.1" required><br><br>
 
-        <!-- <input type="submit" value="Submit Project"> -->
+      <!-- <input type="submit" value="Submit Project"> -->
 
     </form>
+
+    </div>
+
 </body>
+
 </html>
