@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<script setup>
+</script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Project</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
-
-<body>
-<nav id="upper-nav">
+<template>
+  <nav id="upper-nav">
     <div>
       <a href="../index.html"><img id="img-logo" src="../machine-time/images/logo.png" alt="Blok D logo" width="93"></a>
     </div>
@@ -28,15 +21,12 @@
       </ul>
     </div>
   </nav>
-  </nav>
-  </nav>
-  </nav>
-    <h1>Projects</h1>
-    <p>On this page you can find inspiring projects of everyone who used Blok D utensils.</p>
 
+  <h1>Projects</h1>
+  <p>On this page you can find inspiring projects of everyone who used Blok D utensils.</p>
 
   <div class="upload-section">
-    <div> Upload your project!</div>
+    <div>Upload your project!</div>
     <form action="submit_project.php" method="post">
       <label for="project_name">Project Name:</label>
       <input type="text" id="project_name" name="project_name" required><br><br>
@@ -47,18 +37,17 @@
       <label for="project_tools">Project tools used:</label>
       <input type="text" id="project_tools" name="project_tools" required><br><br>
 
-      <label for="web_adress">Web adress van het design </label>
+      <label for="web_adress">Web adress van het design</label>
       <input type="url" id="web_adress" name="web_adress" required><br><br>
 
       <label for="time_per_tool">Time spent per tool (in hours):</label>
       <input type="number" id="time_per_tool" name="time_per_tool" step="0.1" required><br><br>
 
-      <!-- <input type="submit" value="Submit Project"> -->
-
     </form>
+  </div>
+</template>
 
-    </div>
 
-</body>
-
-</html>
+<style scoped>
+@import "../../../front-endhtml/style.css";
+</style>
