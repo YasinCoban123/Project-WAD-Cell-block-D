@@ -1,5 +1,39 @@
-<script setup>
+<script setup lang="ts">
+import { ref } from 'vue';
+import type { ProjectType } from '../types/ProjectType';
+
+const projectName = ref('');
+const projectDescription = ref('');
+const projectTools = ref('');
+const webAddress = ref('');
+const timePerTool = ref(0);
+const projects = ref<ProjectType[]>(JSON.parse(localStorage.getItem('projects') || '[]'));
+
+const submitProject = () => {
+  const newProject: ProjectType = {
+    id: Date.now(),
+    name: projectName.value,
+    description: projectDescription.value,
+    tools: projectTools.value.split(',').map(tool => tool.trim()),
+    webAddress: webAddress.value,
+    timePerTool: timePerTool.value,
+  };
+
+  projects.value.push(newProject);
+  localStorage.setItem('projects', JSON.stringify(projects.value));
+
+  console.log('Submitted Project:', newProject);
+
+  projectName.value = '';
+  projectDescription.value = '';
+  projectTools.value = '';
+  webAddress.value = '';
+  timePerTool.value = 0;
+};
+
 </script>
+
+
 
 <template>
   <nav id="upper-nav">
@@ -27,21 +61,24 @@
 
   <div class="upload-section">
     <div>Upload your project!</div>
-    <form action="submit_project.php" method="post">
+    <form @submit.prevent="submitProject">
       <label for="project_name">Project Name:</label>
-      <input type="text" id="project_name" name="project_name" required><br><br>
+      <input type="text" id="project_name" v-model="projectName" required><br><br>
 
       <label for="project_description">Project Description:</label><br>
-      <textarea id="project_description" name="project_description" rows="4" cols="50" required></textarea><br><br>
+      <textarea id="project_description" v-model="projectDescription" rows="4" cols="50" required></textarea><br><br>
 
       <label for="project_tools">Project tools used:</label>
-      <input type="text" id="project_tools" name="project_tools" required><br><br>
+      <input type="text" id="project_tools" v-model="projectTools" required><br><br>
 
       <label for="web_adress">Web adress van het design</label>
-      <input type="url" id="web_adress" name="web_adress" required><br><br>
+      <input type="url" id="web_adress" v-model="webAddress" required><br><br>
 
       <label for="time_per_tool">Time spent per tool (in hours):</label>
-      <input type="number" id="time_per_tool" name="time_per_tool" step="0.1" required><br><br>
+      <input type="number" id="time_per_tool" v-model="timePerTool" step="0.1" required><br><br>
+
+      <input type="submit" value="Submit Project">
+
 
     </form>
   </div>
