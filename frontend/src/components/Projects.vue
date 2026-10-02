@@ -1,4 +1,8 @@
-<script setup>
+<script setup lang ="ts">
+import { ref } from 'vue';
+import type { ProjectType } from '../types/ProjectType';
+
+const projects = ref<ProjectType[]>(JSON.parse(localStorage.getItem('projects') || '[]'));
 </script>
 
 <template>
@@ -24,10 +28,11 @@
         <h1>Projects</h1>
         <p>On this page you can find inspiring projects of everyone who used Blok D utensils.</p>
 
-        <p> link to project 1:</p>
-        <p> link to project 2:</p>
-        <p> link to project 3:</p>
-        <p> link to project 4:</p>
+        <div v-for="project in projects" :key="project.id" class="project-card">
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+        <a :href="project.webAddress" target="_blank">{{ project.webAddress }}</a>
+        </div>
 
         <nav class="sidebar">
             <ul>
@@ -39,4 +44,14 @@
 
 <style scoped>
 @import "../../../front-endhtml/style.css";
+
+.project-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    max-width: 500px;
+    background-color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 </style>
