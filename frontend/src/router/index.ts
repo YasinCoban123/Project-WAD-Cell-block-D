@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '../pages/HomePage.vue'
+import Home from '../components/Home.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,30 +7,67 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomePage,
+      component: Home,
     },
     {
-      path: '/about',
+      path: '/AboutMe',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/AboutPage.vue'),
+      component: () => import('../components/AboutMe/about.vue'),
     },
     {
       path: '/projects',
       name: 'projects',
-      component: () => import('../components/Projects.vue'),
+      component: () => import('../components/projects/Projects.vue'),
     },
     {
       path: '/add-project',
       name: 'add-project',
-      component: () => import('../components/AddProjects.vue'),
+      component: () => import('../components/projects/AddProjects.vue'),
     },
     {
       path: '/rate-projects',
       name: 'rate-projects',
-      component: () => import('../components/RateProjects.vue'),
+      component: () => import('../components/projects/RateProjects.vue'),
+    },
+    {
+      path: '/materials',
+      name: 'materials',
+      component: () => import('../components/materials/Materials.vue'),
+    },
+    {
+      path: '/materials/acrylic',
+      name: 'acrylic',
+      component: () => import('../components/materials/materials_pages/acrylic.vue'),
+    },
+    {
+      path: '/materials/cardboard',
+      name: 'cardboard',
+      component: () => import('../components/materials/materials_pages/cardboard.vue'),
+    },
+    {
+      path: '/materials/filament',
+      name: 'filament',
+      component: () => import('../components/materials/materials_pages/filament.vue'),
+    },
+    {
+      path: '/materials/plywood',
+      name: 'plywood',
+      component: () => import('../components/materials/materials_pages/plywood.vue'),
+    },
+    {
+      path: '/MachineTime',
+      name: 'machines',
+      component: () => import('../components/MachineTime/machines.vue'),
+    },
+    {
+      path: '/MachineTime/Bertha',
+      name: 'bertha',
+      component: () => import('../components/MachineTime/Bertha.vue'),
+    },
+    {
+      path: '/WorkAt',
+      name: 'work-at',
+      component: () => import('../components/WorkAt/workat.vue'),
     },
   ],
 })
