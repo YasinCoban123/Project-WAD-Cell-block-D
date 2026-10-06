@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { ProjectType } from '../types/ProjectType';
+import type { ProjectType } from '../../types/ProjectType';
+import Navbar from '../Navbar.vue'
+import Footer from '../Footer.vue'
 
 const projectName = ref('');
 const projectDescription = ref('');
@@ -36,26 +38,7 @@ const submitProject = () => {
 
 
 <template>
-  <nav id="upper-nav">
-    <div>
-      <a href="../index.html"><img id="img-logo" src="../machine-time/images/logo.png" alt="Blok D logo" width="93"></a>
-    </div>
-  </nav>
-  <nav id="navbar">
-    <div id="nav-links">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about-me/about.html">About</a></li>
-        <li><a href="../projects/Projects.html">Projects</a></li>
-        <li><a href="../materials/materials.html">Materials</a></li>
-        <li><a href="../machine-time/machines.html">Machines</a></li>
-        <li><a href="../work-at/workat.html">Work at Blok D</a></li>
-        <li><a href="../Tool-Loans/weeknd.html">Tools to loan</a></li>
-        <li><a href="../index.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
+      <Navbar/>
   <h1>Projects</h1>
   <p>On this page you can find inspiring projects of everyone who used Blok D utensils.</p>
 
@@ -82,9 +65,10 @@ const submitProject = () => {
 
     </form>
   </div>
+    <Footer/>
 </template>
 
 
+
 <style scoped>
-@import "../../../front-endhtml/style.css";
 </style>
