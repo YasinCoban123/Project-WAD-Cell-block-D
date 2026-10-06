@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import type { Tool } from '../types/ToolType.ts'
+
+const tools = ref<Tool[]>(JSON.parse(localStorage.getItem 
+  ('tools') || '[]'))
 </script>
 
 <template>
@@ -12,7 +17,7 @@
     <h1 id="Titel">Choose a tool</h1>
     <div class="Tools images">
         <ImageAndText>
-            <a href=""><img id="img-tools" src="Images/ColonelSander.png"></a>
+            <a href="T"><img id="img-tools" src="Images/ColonelSander.png"></a>
             <h1>Sander</h1>
         </ImageAndText>
         <ImageAndText>
