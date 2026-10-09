@@ -11,6 +11,7 @@
         <li><router-link to="/AboutMe">About</router-link></li>
         <li><router-link to="/projects">Projects</router-link></li>
         <li><router-link to="/materials">Materials</router-link></li>
+        <li><router-link to="/tools">Tools</router-link></li>
         <li><router-link to="/MachineTime">Machines</router-link></li>
         <li><router-link to="/WorkAt">Work at Blok D</router-link></li>
 
