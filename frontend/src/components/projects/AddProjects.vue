@@ -9,6 +9,7 @@ const projectDescription = ref('');
 const projectTools = ref('');
 const webAddress = ref('');
 const timePerTool = ref(0);
+const projectStatus = ref<'active' | 'published'>('active');
 const projects = ref<ProjectType[]>(JSON.parse(localStorage.getItem('projects') || '[]'));
 
 const submitProject = () => {
@@ -19,6 +20,7 @@ const submitProject = () => {
     tools: projectTools.value.split(',').map(tool => tool.trim()),
     webAddress: webAddress.value,
     timePerTool: timePerTool.value,
+    status: projectStatus.value,
   };
 
   projects.value.push(newProject);
@@ -31,6 +33,7 @@ const submitProject = () => {
   projectTools.value = '';
   webAddress.value = '';
   timePerTool.value = 0;
+  projectStatus.value = 'active';
 };
 
 </script>
@@ -59,6 +62,12 @@ const submitProject = () => {
 
       <label for="time_per_tool">Time spent per tool (in hours):</label>
       <input type="number" id="time_per_tool" v-model="timePerTool" step="0.1" required><br><br>
+
+      <label for="Projectstatus">Status:</label>
+      <select id="Projectstatus" v-model="projectStatus" required>
+        <option value="active">Active</option>
+        <option value="published">Published</option>
+      </select><br><br>
 
       <input type="submit" value="Submit Project">
 
