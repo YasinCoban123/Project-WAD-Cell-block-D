@@ -4,8 +4,8 @@ import Footer from '../../Footer.vue'
 import plywoodImage from '../../../assets/img/plywood.jpg'
 </script>
 <template>
+  <Navbar/>
 <div class="product-section">
-      <Navbar/>
     <div id="first-product-sect">
       <img :src="plywoodImage" alt="Plywood">
     </div>
