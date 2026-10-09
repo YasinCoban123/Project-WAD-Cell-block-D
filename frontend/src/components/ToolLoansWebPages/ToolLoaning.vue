@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { Tool } from '../types/ToolType.ts'
+import type { Tool } from '../../types/ToolType.ts'
+import Navbar from '../Navbar.vue'
+import Footer from '../Footer.vue'
 
 const tools = ref<Tool[]>(JSON.parse(localStorage.getItem 
   ('tools') || '[]'))
@@ -13,38 +15,40 @@ const tools = ref<Tool[]>(JSON.parse(localStorage.getItem
     <title>Tools Loan</title>
     <link rel="stylesheet" href="../style.css">
 </head>
+    <Navbar/>
 
     <h1 id="Titel">Choose a tool</h1>
     <div class="Tools images">
         <ImageAndText>
-            <a href="T"><img id="img-tools" src="Images/ColonelSander.png"></a>
+            <router-link to="/Tools/Sander"><img id="img-tools" src="../../assets/img/ColonelSander.png"></router-link>
             <h1>Sander</h1>
         </ImageAndText>
         <ImageAndText>
-            <a href=""><img id="img-tools" src="Images/IronMan.jpg"></a>
+            <a href=""><img id="img-tools" src="../../assets/img/IronMan.jpg"></a>
             <h1>Calipers</h1>
         </ImageAndText>
         <ImageAndText>
-            <a href=""><img id="img-tools" src="Images/Trio.png"></a>
+            <a href=""><img id="img-tools" src="../../assets/img/Trio.png"></a>
             <h1>Clamps</h1>
         </ImageAndText>
         <ImageAndText>
-            <a href=""><img id="img-tools" src="Images/WtfIsDit.png"></a>
+            <a href=""><img id="img-tools" src="../../assets/img/WtfIsDit.png"></a>
             <h1>Soldering Irons</h1>
         </ImageAndText>
         <ImageAndText>
-            <a href=""><img id="img-tools" src="Images/LijmPewPew.webp"></a>
+            <a href=""><img id="img-tools" src="../../assets/img/LijmPewPew.webp"></a>
             <h1>Glue Gun</h1>
         </ImageAndText>
         <ImageAndText>
-            <a href=""><img id="img-tools" src="Images/Drill.avif"></a>
+            <a href=""><img id="img-tools" src="../../assets/img/Drill.avif"></a>
             <h1>Drill</h1>
         </ImageAndText>
         <ImageAndText>
-            <a href=""><img id="img-tools" src="Images/LTG.jpg"></a>
+            <a href=""><img id="img-tools" src="../../assets/img/LTG.jpg"></a>
             <h1>LTG</h1>
         </ImageAndText>
     </div>
+    <Footer/>
 </template>
 
 <style>
