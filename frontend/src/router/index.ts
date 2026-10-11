@@ -11,6 +11,14 @@ import filament from '../components/materials/materials_pages/filament.vue'
 import plywood from '../components/materials/materials_pages/plywood.vue'
 import machines from '../components/MachineTime/machines.vue'
 import Bertha from '../components/MachineTime/Bertha.vue'
+import Spark from '../components/MachineTime/Spark.vue'
+import Atlas from '../components/MachineTime/Atlas.vue'
+import Pixel from '../components/MachineTime/Pixel.vue'
+import Bolt from '../components/MachineTime/Bolt.vue'
+import Nova from '@/components/MachineTime/Nova.vue'
+import Orbit from '@/components/MachineTime/Orbit.vue'
+import Echo from '@/components/MachineTime/Echo.vue'
+import Stitch from '@/components/MachineTime/Stitch.vue'
 import ToolLoaning from '../components/ToolLoansWebPages/ToolLoaning.vue'
 import workat from '../components/WorkAt/workat.vue'
 
@@ -68,6 +76,38 @@ const router = createRouter({
     {
       path: '/MachineTime/Bertha',
       component: Bertha,
+    },
+    {
+      path: '/MachineTime/Spark',
+      component: Spark,
+    },
+    {
+      path: '/MachineTime/Atlas',
+      component: Atlas,
+    },
+    {
+      path: '/MachineTime/Pixel',
+      component: Pixel,
+    },
+    {
+      path: '/MachineTime/Orbit',
+      component: Orbit,
+    },
+    {
+      path: '/MachineTime/Nova',
+      component: Nova,
+    },
+    {
+      path: '/MachineTime/Bolt',
+      component: Bolt,
+    },
+    {
+      path: '/MachineTime/Echo',
+      component: Echo,
+    },
+    {
+      path: '/MachineTime/Stitch',
+      component: Stitch,
     },
     {
       path: '/WorkAt',
