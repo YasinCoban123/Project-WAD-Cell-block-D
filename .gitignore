@@ -72,3 +72,5 @@ Thumbs.db
 # Testing & Coverage
 coverage/
 .nyc_output/
+
+.DS_Store

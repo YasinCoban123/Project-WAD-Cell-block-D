@@ -19,12 +19,12 @@ a,
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 } */
- 
+
 /* Main css */
 body {
   color: darkslategrey;
   background-color: rgb(254, 235, 208);
-   /* background-image: url("more-bullets.gif");
+  /* background-image: url("more-bullets.gif");
   background-repeat: no-repeat, repeat;
     background-size: cover; Resize the background image to cover the entire container */
 
@@ -105,17 +105,65 @@ a:active {
 }
 
 .machine-card {
-  max-width: 200px;
+  max-width: 220px;
   margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 .machine-card .machine-image {
-  width: 100%;
-  height: auto;
-  box-sizing: border-box;
-  border: 6px solid black;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: block;
+  margin: 0 auto;
 }
 
+.machine-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 12px 0 1px;
+}
+
+.machine-card p {
+  font-size: 16px;
+  color: #526666;
+  margin: 0;
+}
+
+.machine-link {
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  color: inherit;
+}
+
+.machine-card .machine-status {
+  color: #166534;
+  font-weight: 700;
+}
+
+.machine-card .machine-status.out-of-service {
+  color: #b91c1c;
+}
+
+.session-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.machine-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
 
 #footer {
   background-color: rgb(251, 145, 31);
@@ -167,8 +215,8 @@ a:active {
   font-size: 18px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-#beware
-{
+
+#beware {
   font-weight: bold;
 }
 
@@ -195,8 +243,8 @@ a:active {
   display: flex;
   justify-content: center;
 }
-.material-tools
-{
+
+.material-tools {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -204,15 +252,15 @@ a:active {
   padding-top: 40px;
   padding-bottom: 30;
 }
-#img-materials-4
-{
+
+#img-materials-4 {
   height: 220px;
   width: 220px;
   border: 8px solid #fb911f;
   border-radius: 40px;
 }
-.product-section
-{
+
+.product-section {
   display: flex;
   justify-content: center;
   gap: 100px;
@@ -220,15 +268,14 @@ a:active {
 
 }
 
-.product-section img
-{
+.product-section img {
   height: 500px;
   width: 500px;
   border: 4px solid #fb911f;
   border-radius: 15px;
 }
-#second-product-sect
-{
+
+#second-product-sect {
   padding-right: 100px;
   padding-left: 100px;
 }
