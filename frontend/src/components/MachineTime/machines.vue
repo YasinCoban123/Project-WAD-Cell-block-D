@@ -76,7 +76,7 @@ const machines = [
   {
   id: 9,
   name: 'Stitch',
-  type: '3D printer',
+  type: 'Embroidery machine',
   image: stitchImage,
   status: MachineStatus.InService,
   }
