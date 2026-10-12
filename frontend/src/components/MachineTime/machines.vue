@@ -16,6 +16,7 @@ enum MachineStatus {
   InService = "In service",
   OutOfService = "Out of service",
 }
+const protectedMachineIds = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const machines = ref([
   {
@@ -126,6 +127,10 @@ function changeMachineStatus(id: number) {
   }
 }
 function deleteMachine(id: number) {
+  if (protectedMachineIds.includes(id)) {
+    alert("This machine cannot be deleted. Change its status instead.");
+    return;
+  }
   machines.value = machines.value.filter((machine) => {
     return machine.id !== id;
   });
