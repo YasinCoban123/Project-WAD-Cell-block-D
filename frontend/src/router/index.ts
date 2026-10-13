@@ -13,6 +13,7 @@ import machines from '../components/MachineTime/machines.vue'
 import Bertha from '../components/MachineTime/Bertha.vue'
 import ToolLoaning from '../components/ToolLoansWebPages/ToolLoaning.vue'
 import workat from '../components/WorkAt/workat.vue'
+import ToolLoaningForum from '@/components/ToolLoansWebPages/ToolLoaningForum.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,7 +23,7 @@ const router = createRouter({
       component: Home,
     },
     {
-      path: '/AboutMe',
+      path: '/aboutme',
       component: about,
     },
     {
@@ -58,19 +59,23 @@ const router = createRouter({
       component: plywood,
     },
     {
-      path: '/Tools',
+      path: '/tools',
       component: ToolLoaning
     },
     {
-      path: '/MachineTime',
+      path: '/tools/:id',
+      component: ToolLoaningForum,
+    },
+    {
+      path: '/machineTime',
       component: machines,
     },
     {
-      path: '/MachineTime/Bertha',
+      path: '/machineTime/Bertha',
       component: Bertha,
     },
     {
-      path: '/WorkAt',
+      path: '/workat',
       component: workat,
     },
   ],
