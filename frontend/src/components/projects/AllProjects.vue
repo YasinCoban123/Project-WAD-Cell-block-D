@@ -4,36 +4,21 @@ import { ref, watch } from 'vue';
 import type { ProjectType } from '../../types/ProjectType';
 import Navbar from '../Navbar.vue'
 import Footer from '../Footer.vue'
+import { useProjects } from '../../composibles/useProjects';
 
-const projects = ref<ProjectType[]>(JSON.parse(localStorage.getItem('projects') || '[]'));
 
-watch(projects, (v) => localStorage.setItem('projects', JSON.stringify(v)), { deep: true })
+const {
+  projects,
+  editingProject,
+  deleteProjects,
+  updateProjects,
+  handleUpdate, 
+  startEditing, 
+  cancelEdit,
+} = useProjects();
 
-const editingProject = ref<ProjectType | null>(null);
 
-function deleteProjects(id: number) {
-  projects.value = projects.value.filter(p => p.id !== id)
-}
 
-function updateProjects(project: ProjectType) {
-  const index = projects.value.findIndex(p => p.id === project.id)
-  if (index !== -1) {
-    projects.value[index] = project
-  }
-}
-
-function handleUpdate(project: ProjectType) {
-  updateProjects(project)
-  cancelEdit()
-}
-
-function startEditing(project: ProjectType) {
-  editingProject.value = { ...project }
-}
-
-function cancelEdit() {
-  editingProject.value = null
-}
 </script>
 
 <template>
