@@ -5,11 +5,9 @@ import { defaultTools } from '../data/tools.ts'
 import Navbar from '../Navbar.vue'
 import Footer from '../Footer.vue'
 
+
 const tools = ref<Tool[]>(JSON.parse(localStorage.getItem('tools') || '[]'))
 
-if (tools.value.length === 0) {
-  tools.value = defaultTools
-}
 
 watch(
   tools,
@@ -23,7 +21,7 @@ watch(
     <h1 id="Titel">Choose a tool</h1>
     <div class="Tools images">
     <div v-for="tool in tools" :key="tool.id" class="tool-card">
-        <router-link :to="`/Tools/${tool.id}`">
+        <router-link :to="`/tools/${tool.id}`">
         <img class="img-tools" :src="tool.image" :alt="tool.name" />
         </router-link>
         <h2>{{ tool.name }}</h2>
