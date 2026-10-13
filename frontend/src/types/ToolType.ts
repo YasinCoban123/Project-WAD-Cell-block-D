@@ -4,4 +4,6 @@ export interface Tool {
   description: string
   OnLoan: boolean
   Condition: string
+  image: string
+  uitlener: string
 }

@@ -1,62 +1,47 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { Tool } from '../../types/ToolType.ts'
+import { ref, watch } from 'vue'
+import type { Tool } from '@/types/ToolType.ts'
+import { defaultTools } from '../data/tools.ts' 
 import Navbar from '../Navbar.vue'
 import Footer from '../Footer.vue'
 
-const tools = ref<Tool[]>(JSON.parse(localStorage.getItem 
-  ('tools') || '[]'))
+const tools = ref<Tool[]>(JSON.parse(localStorage.getItem('tools') || '[]'))
+
+if (tools.value.length === 0) {
+  tools.value = defaultTools
+}
+
+watch(
+  tools,
+  (value) => localStorage.setItem('tools', JSON.stringify(value)),
+  { deep: true, immediate: true },
+)
 </script>
 
 <template>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tools Loan</title>
-    <link rel="stylesheet" href="../style.css">
-</head>
-    <Navbar/>
-
+  <Navbar />
     <h1 id="Titel">Choose a tool</h1>
     <div class="Tools images">
-        <ImageAndText>
-            <router-link to="/Tools/Sander"><img id="img-tools" src="../../assets/img/ColonelSander.png"></router-link>
-            <h1>Sander</h1>
-        </ImageAndText>
-        <ImageAndText>
-            <a href=""><img id="img-tools" src="../../assets/img/IronMan.jpg"></a>
-            <h1>Calipers</h1>
-        </ImageAndText>
-        <ImageAndText>
-            <a href=""><img id="img-tools" src="../../assets/img/Trio.png"></a>
-            <h1>Clamps</h1>
-        </ImageAndText>
-        <ImageAndText>
-            <a href=""><img id="img-tools" src="../../assets/img/WtfIsDit.png"></a>
-            <h1>Soldering Irons</h1>
-        </ImageAndText>
-        <ImageAndText>
-            <a href=""><img id="img-tools" src="../../assets/img/LijmPewPew.webp"></a>
-            <h1>Glue Gun</h1>
-        </ImageAndText>
-        <ImageAndText>
-            <a href=""><img id="img-tools" src="../../assets/img/Drill.avif"></a>
-            <h1>Drill</h1>
-        </ImageAndText>
-        <ImageAndText>
-            <a href=""><img id="img-tools" src="../../assets/img/LTG.jpg"></a>
-            <h1>LTG</h1>
-        </ImageAndText>
+    <div v-for="tool in tools" :key="tool.id" class="tool-card">
+        <router-link :to="`/Tools/${tool.id}`">
+        <img class="img-tools" :src="tool.image" :alt="tool.name" />
+        </router-link>
+        <h2>{{ tool.name }}</h2>
+        <p>Conditie: {{ tool.Condition }}</p>
+        <p>Uitlener: {{ tool.uitlener || '-' }}</p>
     </div>
-    <Footer/>
+    </div>
+
+  <Footer />
 </template>
 
 <style>
-#img-tools {
-  height: 300px;
-  width: 300px;
-  border: 10px solid black;
-  background-color: white;
+.img-tools {
+  height:220px;
+  width: 220px;
+  border: 6px solid rgb(255, 162, 0);
+  background-image: url('../../assets/img/workbench.jpg');
+  background-size: cover;
 }
 
 .Tools {
@@ -64,12 +49,25 @@ const tools = ref<Tool[]>(JSON.parse(localStorage.getItem
   flex-wrap: wrap;
   justify-content: center;
   gap: 100px;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 #Titel {
   display: flex;
   font-size: 50px;
   justify-content: center;
-} 
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.tool-card h2{
+    font-weight: bold;
+}
+.tool-card {
+  margin: 4px 0;
+}
 </style>
