@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import Navbar from '../Navbar.vue'
 import Footer from '../Footer.vue'
-import acrylicImage from '../../assets/img/acrylic.jpg'
-import cardboardImage from '../../assets/img/cardboard.jpg'
-import filamentImage from '../../assets/img/filemant.jpg'
-import plywoodImage from '../../assets/img/plywood.jpg'
+import { useMaterials } from '../../composables/useMaterials'
+import { useOrderedMaterials } from '../../composables/useOrderedMaterials'
 
+const { materials } = useMaterials()
+const { orderedMaterials } = useOrderedMaterials()
 </script>
 <template>
       <Navbar/>
@@ -15,10 +15,10 @@ import plywoodImage from '../../assets/img/plywood.jpg'
       <ol>List of items
         <br>
         <br>
-        <li><router-link to="/materials/filament">Filament</router-link> | Quantity. 30KG</li>
-        <li><router-link to="/materials/plywood">Plywood</router-link> | Quantity. 500 pieces</li>
-        <li><router-link to="/materials/acrylic">Acrylic</router-link> | Quantity. 300 pieces</li>
-        <li><router-link to="/materials/cardboard">Cardboard</router-link> | Quantity. 150 pieces</li>
+        <li v-for="material in materials" :key="`help-${material.id}`">
+          <router-link :to="`/materials/${material.id}`">{{ material.name }}</router-link>
+          | Stock. {{ material.stock }} {{ material.unit }}
+        </li>
         <p>Click on the item's name, or click the images underneath, to go to the ordering page</p>
       </ol>
     </div>
@@ -37,22 +37,12 @@ import plywoodImage from '../../assets/img/plywood.jpg'
 
   <h1 id="h1-materials-1">Available products</h1>
   <div class="material-tools">
-        <ImageAndText>
-            <router-link to="/materials/filament"><img id="img-materials-4" :src="filamentImage" alt="Filament"></router-link>
-            <h2>Filament</h2>
-        </ImageAndText>
-        <ImageAndText>
-            <router-link to="/materials/plywood"><img id="img-materials-4" :src="plywoodImage" alt="Plywood"></router-link>
-            <h2>Plywood</h2>
-        </ImageAndText>
-        <ImageAndText>
-            <router-link to="/materials/acrylic"><img id="img-materials-4" :src="acrylicImage" alt="Acrylic"></router-link>
-            <h2>Acrylic</h2>
-        </ImageAndText>
-                <ImageAndText>
-            <router-link to="/materials/cardboard"><img id="img-materials-4" :src="cardboardImage" alt="Cardboard"></router-link>
-            <h2>Cardboard</h2>
-        </ImageAndText>
+        <div v-for="material in materials" :key="material.id">
+          <router-link :to="`/materials/${material.id}`">
+            <img id="img-materials-4" :src="material.image" :alt="material.name">
+          </router-link>
+          <h2>{{ material.name }}</h2>
+        </div>
     </div>
   <h1 id="h1-materials-1">Tables with the information</h1>
 
@@ -172,5 +162,16 @@ import plywoodImage from '../../assets/img/plywood.jpg'
       </tr>
     </table>
   </div>
+
+  <h1 id="h1-materials-1">My Ordered Materials</h1>
+  <div class="ordered-materials">
+    <p v-if="orderedMaterials.length === 0">No materials ordered yet.</p>
+    <ul v-else>
+      <li v-for="(material, index) in orderedMaterials" :key="`${material.name}-${index}`">
+        {{ material.name }} - Quantity: {{ material.quantity }}
+      </li>
+    </ul>
+  </div>
+
   <Footer/>
 </template>
