@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import Navbar from '../Navbar.vue'
 import Footer from '../Footer.vue'
+import OrderedMaterialCard from './OrderedMaterialCard.vue'
 import { useMaterials } from '../../composables/useMaterials'
 import { useOrderedMaterials } from '../../composables/useOrderedMaterials'
 
 const { materials } = useMaterials()
-const { orderedMaterials } = useOrderedMaterials()
+const { orderedMaterials, deleteMaterial, updateMaterial } = useOrderedMaterials()
 </script>
 <template>
       <Navbar/>
@@ -165,13 +166,34 @@ const { orderedMaterials } = useOrderedMaterials()
 
   <h1 id="h1-materials-1">My Ordered Materials</h1>
   <div class="ordered-materials">
-    <p v-if="orderedMaterials.length === 0">No materials ordered yet.</p>
-    <ul v-else>
-      <li v-for="(material, index) in orderedMaterials" :key="`${material.name}-${index}`">
-        {{ material.name }} - Quantity: {{ material.quantity }}
-      </li>
-    </ul>
+    <p id="ordered-materials-p" v-if="orderedMaterials.length === 0">No materials ordered yet.</p>
+    <div v-else class="ordered-material-list">
+      <OrderedMaterialCard
+        v-for="order in orderedMaterials"
+        :key="order.id"
+        :order="order"
+        :material="materials.find((material) => material.name === order.name)!"
+        @delete="deleteMaterial"
+        @update="updateMaterial"
+      />
+    </div>
   </div>
 
   <Footer/>
 </template>
+
+<style scoped>
+.ordered-material-list {
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  justify-content: center;
+  gap: 30px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+#ordered-materials-p
+{
+  display: flex;
+  justify-content: center;
+}
+</style>

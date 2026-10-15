@@ -13,10 +13,21 @@ const { addMaterial } = useOrderedMaterials()
 const materialId = computed(() => Number(route.params.id))
 const material = computed(() => getMaterial(materialId.value))
 const quantity = ref(1)
+const formError = ref('')
+const successMessage = ref('')
 
 function handleOrder(): void {
+  formError.value = ''
+  successMessage.value = ''
+
+  if (!Number.isInteger(quantity.value) || quantity.value <= 0) {
+    formError.value = 'Enter een waarde groter dan 0.'
+    return
+  }
+
   if (material.value) {
     addMaterial(material.value.name, quantity.value)
+    successMessage.value = `${material.value.name} Succesvol gereserveerd`
   }
 }
 </script>
@@ -38,6 +49,8 @@ function handleOrder(): void {
         </div>
         <button type="button" @click="handleOrder">Order</button>
       </div>
+      <p v-if="formError" class="error">{{ formError }}</p>
+      <p v-if="successMessage" class="success">{{ successMessage }}</p>
     </div>
   </div>
   <div v-else>
@@ -81,5 +94,13 @@ function handleOrder(): void {
   background: #e69114;
   font: inherit;
   cursor: pointer;
+}
+
+.error {
+  color: #c62828;
+}
+
+.success {
+  color: #2e7d32;
 }
 </style>
