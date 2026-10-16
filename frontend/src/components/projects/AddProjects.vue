@@ -3,13 +3,26 @@ import { ref } from 'vue';
 import type { ProjectType } from '../../types/ProjectType';
 import Navbar from '../Navbar.vue'
 import Footer from '../Footer.vue'
+import { useProjects } from '../../composibles/useProjects';
+
+const { addProject } = useProjects();
 
 const projectName = ref('');
 const projectDescription = ref('');
 const projectTools = ref('');
 const webAddress = ref('');
 const timePerTool = ref(0);
+const projectStatus = ref<'active' | 'published'>('active');
 const projects = ref<ProjectType[]>(JSON.parse(localStorage.getItem('projects') || '[]'));
+
+const resetForm = () => {
+  projectName.value = '';
+  projectDescription.value = '';
+  projectTools.value = '';
+  webAddress.value = '';
+  timePerTool.value = 0;
+  projectStatus.value = 'active';
+};
 
 const submitProject = () => {
   const newProject: ProjectType = {
@@ -19,18 +32,11 @@ const submitProject = () => {
     tools: projectTools.value.split(',').map(tool => tool.trim()),
     webAddress: webAddress.value,
     timePerTool: timePerTool.value,
+    status: projectStatus.value
   };
 
-  projects.value.push(newProject);
-  localStorage.setItem('projects', JSON.stringify(projects.value));
-
-  console.log('Submitted Project:', newProject);
-
-  projectName.value = '';
-  projectDescription.value = '';
-  projectTools.value = '';
-  webAddress.value = '';
-  timePerTool.value = 0;
+  addProject(newProject);
+  resetForm();
 };
 
 </script>
@@ -60,7 +66,16 @@ const submitProject = () => {
       <label for="time_per_tool">Time spent per tool (in hours):</label>
       <input type="number" id="time_per_tool" v-model="timePerTool" step="0.1" required><br><br>
 
-      <input type="submit" value="Submit Project">
+      <label for="Projectstatus">Status:</label>
+      <select id="Projectstatus" v-model="projectStatus" required>
+        <option value="active">Active</option>
+        <option value="published">Published</option>
+      </select><br><br>
+
+      <input type="submit" value="Submit Project" >
+      
+
+
 
 
     </form>
