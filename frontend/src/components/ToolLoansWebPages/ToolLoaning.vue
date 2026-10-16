@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import type { Tool } from '@/types/ToolType.ts'
-import { defaultTools } from '../data/tools.ts' 
+import type { Tool } from '@/types/Tool.ts'
+import { defaultTools } from '../data/tools.ts'
 import Navbar from '../Navbar.vue'
 import Footer from '../Footer.vue'
+
+
 
 const tools = ref<Tool[]>(JSON.parse(localStorage.getItem('tools') || '[]'))
 
 if (tools.value.length === 0) {
   tools.value = defaultTools
 }
+
 
 watch(
   tools,
@@ -28,7 +31,6 @@ watch(
         </router-link>
         <h2>{{ tool.name }}</h2>
         <p>Conditie: {{ tool.Condition }}</p>
-        <p>Uitlener: {{ tool.uitlener || '-' }}</p>
     </div>
     </div>
 

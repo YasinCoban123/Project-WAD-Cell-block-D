@@ -2,8 +2,7 @@ export interface Tool {
   id: number
   name: string
   description: string
-  OnLoan: boolean
+  LoanID?: number
   Condition: string
   image: string
-  uitlener: string
 }

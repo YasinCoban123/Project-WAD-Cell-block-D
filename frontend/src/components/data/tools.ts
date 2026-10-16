@@ -1,4 +1,4 @@
-import type { Tool } from '@/types/ToolType.ts'
+import type { Tool } from '@/types/Tool.ts'
 
 import sander from '../../assets/img/ColonelSander.png'
 import calipers from '../../assets/img/IronMan.jpg'
@@ -9,11 +9,11 @@ import drill from '../../assets/img/Drill.avif'
 import ltg from '../../assets/img/LTG.jpg'
 
 export const defaultTools: Tool[] = [
-  { id: 1, name: 'Sander', description: 'Schuurmachine', OnLoan: false, Condition: 'Goed', image: sander, uitlener: ''  },
-  { id: 2, name: 'Calipers', description: 'Schuifmaat', OnLoan: false, Condition: 'Goed', image: calipers, uitlener: ''  },
-  { id: 3, name: 'Clamps', description: 'Lijmklemmen', OnLoan: false, Condition: 'Goed', image: clamps, uitlener: ''  },
-  { id: 4, name: 'Soldering Irons', description: 'Soldeerbouten', OnLoan: false, Condition: 'Goed', image: solderingIron, uitlener: ''  },
-  { id: 5, name: 'Glue Gun', description: 'Lijmpistool', OnLoan: false, Condition: 'Goed', image: glueGun, uitlener: ''  },
-  { id: 6, name: 'Drill', description: 'Boormachine', OnLoan: false, Condition: 'Goed', image: drill, uitlener: ''  },
-  { id: 7, name: 'LTG', description: 'LTG', OnLoan: false, Condition: 'Goed', image: ltg, uitlener: ''  },
+  { id: 1, name: 'Sander', description: 'Schuurmachine', Condition: 'Goed', image: sander},
+  { id: 2, name: 'Calipers', description: 'Schuifmaat', Condition: 'Goed', image: calipers},
+  { id: 3, name: 'Clamps', description: 'Lijmklemmen', Condition: 'Goed', image: clamps},
+  { id: 4, name: 'Soldering Irons', description: 'Soldeerbouten', Condition: 'Goed', image: solderingIron},
+  { id: 5, name: 'Glue Gun', description: 'Lijmpistool', Condition: 'Goed', image: glueGun},
+  { id: 6, name: 'Drill', description: 'Boormachine', Condition: 'Goed', image: drill},
+  { id: 7, name: 'LTG', description: 'Low Tier God is a Street Fighter 5 (SFV) player and YouTube streamer known for his rage and funny moments. He is universally hated by the SFV community, as well as the fighting game community in general. He has trash talked well-liked SFV professional players, such as Smug and Snake Eyez. Low Tier God is also hated for banning anyone in his chat who criticizes him, falsely copyright striking the videos of those who criticize him, and for his racist rants where he uses racial slurs against black people.', Condition: 'Goed', image: ltg},
 ]
