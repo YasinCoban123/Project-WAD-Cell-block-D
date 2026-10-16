@@ -5,4 +5,5 @@ export interface ProjectType {
   tools: string[];
   webAddress: string;
   timePerTool: number;
+  status: 'active' | 'published';
 }
