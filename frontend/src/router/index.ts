@@ -5,10 +5,7 @@ import Projects from "../components/projects/Projects.vue";
 import AddProjects from "../components/projects/AddProjects.vue";
 import RateProjects from "../components/projects/RateProjects.vue";
 import Materials from "../components/materials/Materials.vue";
-import acrylic from "../components/materials/materials_pages/acrylic.vue";
-import cardboard from "../components/materials/materials_pages/cardboard.vue";
-import filament from "../components/materials/materials_pages/filament.vue";
-import plywood from "../components/materials/materials_pages/plywood.vue";
+import MaterialDetailPage from "../components/materials/MaterialDetailPage.vue";
 import machines from "../components/MachineTime/machines.vue";
 import MachinePage from "../components/MachineTime/MachinePage.vue";
 import ToolLoaning from "../components/ToolLoansWebPages/ToolLoaning.vue";
@@ -47,20 +44,8 @@ const router = createRouter({
       component: Materials,
     },
     {
-      path: "/materials/acrylic",
-      component: acrylic,
-    },
-    {
-      path: "/materials/cardboard",
-      component: cardboard,
-    },
-    {
-      path: "/materials/filament",
-      component: filament,
-    },
-    {
-      path: "/materials/plywood",
-      component: plywood,
+      path: "/materials/:id",
+      component: MaterialDetailPage,
     },
     {
       path: "/Tools",
