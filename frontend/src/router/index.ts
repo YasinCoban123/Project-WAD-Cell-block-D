@@ -5,7 +5,7 @@ import Projects from "../components/projects/Projects.vue";
 import AddProjects from "../components/projects/AddProjects.vue";
 import RateProjects from "../components/projects/RateProjects.vue";
 import Materials from "../components/materials/Materials.vue";
-import MaterialDetailPage from '../components/materials/MaterialDetailPage.vue'
+import MaterialDetailPage from "../components/materials/MaterialDetailPage.vue";
 import machines from "../components/MachineTime/machines.vue";
 import MachinePage from "../components/MachineTime/MachinePage.vue";
 import ToolLoaning from "../components/ToolLoansWebPages/ToolLoaning.vue";
@@ -44,7 +44,7 @@ const router = createRouter({
       component: Materials,
     },
     {
-      path: '/materials/:id',
+      path: "/materials/:id",
       component: MaterialDetailPage,
     },
     {
