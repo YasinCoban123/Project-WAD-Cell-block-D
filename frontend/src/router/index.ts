@@ -10,6 +10,7 @@ import machines from "../components/MachineTime/machines.vue";
 import MachinePage from "../components/MachineTime/MachinePage.vue";
 import ToolLoaning from "../components/ToolLoansWebPages/ToolLoaning.vue";
 import workat from "../components/WorkAt/workat.vue";
+import ToolLoaningForum from "@/components/ToolLoansWebPages/ToolLoaningForum.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -53,7 +54,7 @@ const router = createRouter({
     },
     {
       path: '/tools/:id',
-      component: ToolLoaning,
+      component: ToolLoaningForum,
     },
     {
       path: '/machineTime',
