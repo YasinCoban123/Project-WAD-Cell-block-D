@@ -9,7 +9,7 @@ import Footer from '../Footer.vue'
 
 const tools = ref<Tool[]>(JSON.parse(localStorage.getItem('tools') || '[]'))
 
-if (tools.value.length === 0) {
+if (tools.value.length == 0) {
   tools.value = defaultTools
 }
 
