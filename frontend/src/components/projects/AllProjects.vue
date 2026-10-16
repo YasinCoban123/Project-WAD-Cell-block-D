@@ -31,6 +31,8 @@ const {
               <input v-model="editingProject.name" />
               <textarea v-model="editingProject.description"></textarea>
               <input v-model="editingProject.webAddress" />
+              <button v-if="editingProject.status === 'active'" @click="editingProject.status = 'published'">Publish</button>
+            <p v-else>Status: published</p>
               <button @click="handleUpdate(editingProject)">Save</button>
               <button @click="cancelEdit">Cancel</button>
           </template>
