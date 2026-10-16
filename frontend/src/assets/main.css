@@ -55,7 +55,7 @@ main {
 }
 
 #upper-nav {
-  background: linear-gradient(to left, rgb(251, 145, 31), #ecf2ec);
+  background: rgb(251, 145, 31);
   height: 80px;
   color: black;
 }
@@ -65,7 +65,7 @@ main {
 }
 
 #navbar {
-  background-color: rgb(251, 145, 31);
+  background: linear-gradient(to bottom, rgb(251, 145, 31), rgb(254, 235, 208));
   height: 60px;
   color: black;
 }
