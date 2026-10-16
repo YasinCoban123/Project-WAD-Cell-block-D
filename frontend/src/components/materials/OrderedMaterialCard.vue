@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Material } from '../../types/Material'
-import type { OrderedMaterial } from '../../composables/useOrderedMaterials'
+import type { OrderedMaterial } from '../../composibles/useOrderedMaterials'
 
 const props = defineProps<{
   order: OrderedMaterial
