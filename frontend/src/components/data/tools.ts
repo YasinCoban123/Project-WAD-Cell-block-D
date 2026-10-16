@@ -1,12 +1,12 @@
 import type { Tool } from '@/types/Tool.ts'
 
 import sander from '../../assets/img/ColonelSander.png'
-import calipers from '../../assets/img/IronMan.jpg'
+import calipers from '../../assets/img/IronMan.png'
 import clamps from '../../assets/img/Trio.png'
 import solderingIron from '../../assets/img/WtfIsDit.png'
-import glueGun from '../../assets/img/LijmPewPew.webp'
+import glueGun from '../../assets/img/LijmPewPew.png'
 import drill from '../../assets/img/Drill.avif'
-import ltg from '../../assets/img/LTG.jpg'
+import ltg from '../../assets/img/LTG.png'
 
 export const defaultTools: Tool[] = [
   { id: 1, name: 'Sander', description: 'Schuurmachine', Condition: 'Goed', image: sander},

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { useLoanings } from '@/composables/UseLoanings.ts'
+import { useLoanings } from '@/composibles/UseLoanings.ts'
 import type { Tool } from '@/types/Tool.ts'
 import type { Loan } from '@/types/Loan.ts'
 import Navbar from '../Navbar.vue'
