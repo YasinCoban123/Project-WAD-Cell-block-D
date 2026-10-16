@@ -2,8 +2,8 @@
 import Navbar from '../Navbar.vue'
 import Footer from '../Footer.vue'
 import OrderedMaterialCard from './OrderedMaterialCard.vue'
-import { useMaterials } from '../../composables/useMaterials'
-import { useOrderedMaterials } from '../../composables/useOrderedMaterials'
+import { useMaterials } from '../../composibles/useMaterials'
+import { useOrderedMaterials } from '../../composibles/useOrderedMaterials'
 
 const { materials } = useMaterials()
 const { orderedMaterials, deleteMaterial, updateMaterial } = useOrderedMaterials()

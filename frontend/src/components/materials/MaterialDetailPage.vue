@@ -3,8 +3,8 @@ import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import Navbar from '../Navbar.vue'
 import Footer from '../Footer.vue'
-import { useMaterials } from '../../composables/useMaterials'
-import { useOrderedMaterials } from '../../composables/useOrderedMaterials'
+import { useMaterials } from '../../composibles/useMaterials'
+import { useOrderedMaterials } from '../../composibles/useOrderedMaterials'
 
 const route = useRoute()
 const { getMaterial } = useMaterials()
