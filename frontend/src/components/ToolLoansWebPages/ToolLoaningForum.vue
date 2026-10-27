@@ -102,7 +102,7 @@ function cancelEdit() {
       <form v-if="!activeLoan || editingLoan" class="loan-form" @submit.prevent="handleSubmit">
         <input v-model="member" placeholder="Naam" />
         <input v-model="startDate" type="date"/>
-        <input v-model="endDate" type="date" />
+        <input v-model="endDate" type="date"/>
         <button type="submit">{{ editingLoan ? 'Opslaan' : 'Uitlenen' }}</button>
         <button v-if="editingLoan" type="button" @click="cancelEdit">Annuleren</button>
       </form>
