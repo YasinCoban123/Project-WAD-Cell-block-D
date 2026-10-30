@@ -16,10 +16,6 @@
     // "types": ["node"],
     // and npm install -D @types/node
 
-    /* Required for TypeORM in lesson 3 */
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-
     // Other Outputs
     "sourceMap": true,
     "declaration": true,
@@ -28,6 +24,8 @@
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
 
     // Style Options
     // "noImplicitReturns": true,
@@ -43,11 +41,12 @@
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
+     "esModuleInterop": true,
+
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+     "forceConsistentCasingInFileNames": true
 
   },
-  "include": ["src/**/*"]
+   "include": ["src/**/*"]
 }
