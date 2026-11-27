@@ -1,7 +1,7 @@
 import { Router } from "express";
 import type { Request, Response } from "express";
 import { AppDataSource } from "../data-source.js";
-import { Project } from "../entities/project.js";
+import { Project } from "../models/project.js";
 
 const router = Router();
 
