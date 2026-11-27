@@ -4,6 +4,8 @@ import homeRouter from "./routes/home.routes.js"
 import productRouter from "./routes/product.routes.js";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { AppDataSource } from "./data-source.js";
+import projectRouter from "./routes/project.routes.js"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename)
@@ -12,13 +14,17 @@ const __dirname = path.dirname(__filename)
 const app = express();
 const PORT = 3000;
 
+await AppDataSource.initialize();
+
 app.use((req: Request, res: Response, next: NextFunction) => {
  console.log(`Request: ${req.method} ${req.url}`);
  next(); 
 })
+app.use(express.json())
 app.use("/shop", productRouter)
 app.use(homeRouter)
 app.use(productRouter)
+app.use(projectRouter)
 app.use((req: Request, res: Response) => {
  res.sendFile(path.join(__dirname, ".", "views", "404.html"))
 });

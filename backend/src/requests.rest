@@ -1,0 +1,11 @@
+GET  http://localhost:3000/api/projects
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "description": "Omschrijving",
+  "tools": ["boor", "hamer"],
+  "webAddress": "https://test.com",
+  "timePerTool": 2,
+  "status": "active"
+}
